@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us · Exhibition Magazine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #000000;
+      --secondary-color: #FFFFFF;
+      --accent-color: #f5f5f5;
+      --text-color: #1a1a1a;
+      --light-gray: #e0e0e0;
+      --mid-gray: #d0d0d0;
+      --dark-gray: #666666;
+      --line-color: #c0c0c0;
+      --serif-font: 'Playfair Display', 'Times New Roman', serif;
+      --sans-font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf8;
+      color: var(--text-color);
+      line-height: 1.6;
+      font-family: var(--sans-font);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== DECORATIVE LINES & DIVIDERS ===== */
+    .line-horizontal {
+      width: 100%;
+      height: 1px;
+      background-color: var(--line-color);
+      margin: 0;
+    }
+    .line-horizontal.thick {
+      height: 2px;
+    }
+    .line-horizontal.double {
+      height: 1px;
+      border-top: 1px solid var(--line-color);
+      border-bottom: 1px solid var(--line-color);
+    }
+    .line-horizontal.short {
+      width: 60px;
+      height: 3px;
+      background-color: #000;
+      margin: 10px 0;
+    }
+    .line-horizontal.dashed {
+      height: 1px;
+      border-top: 1px dashed var(--mid-gray);
+      background: none;
+    }
+
+    .line-vertical {
+      width: 1px;
+      background-color: var(--line-color);
+      align-self: stretch;
+    }
+    .line-vertical.thick {
+      width: 2px;
+    }
+
+    /* вертикальная линия-разделитель между колонками (только на десктопе) */
+    .main-content {
+      position: relative;
+      display: flex;
+      padding: 50px 5%;
+      gap: 50px;
+    }
+    .content-divider {
+      position: absolute;
+      left: 66%;
+      top: 50px;
+      bottom: 50px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--mid-gray) 10%, var(--mid-gray) 90%, transparent);
+      display: block;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background-color: #fafaf8;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--line-color);
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--line-color);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--mid-gray);
+      padding: 2px;
+    }
+    .logo-text {
+      font-family: var(--serif-font);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-left: 2px solid #000;
+      padding-left: 14px;
+    }
+
+    /* ===== TOP DECORATIVE STRIP ===== */
+    .top-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 5%;
+      border-bottom: 1px solid var(--line-color);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--dark-gray);
+      font-weight: 500;
+    }
+    .top-strip .strip-line {
+      flex: 1;
+      height: 1px;
+      background-color: var(--mid-gray);
+      margin: 0 15px;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      background-color: #fafaf8;
+      padding: 16px 5%;
+      text-align: center;
+      border-bottom: 2px solid #000;
+      position: relative;
+    }
+    .nav::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background-color: var(--mid-gray);
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .content-left {
+      flex: 2;
+      padding-right: 10px;
+    }
+    .content-right {
+      flex: 1;
+      padding-left: 10px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: var(--dark-gray);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+    .section-kicker .kicker-line {
+      flex: 1;
+      height: 1px;
+      background-color: var(--mid-gray);
+    }
+
+    .hero-title {
+      font-family: var(--serif-font);
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      border-left: 5px solid #000;
+      padding-left: 25px;
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      color: var(--dark-gray);
+      margin-bottom: 30px;
+      font-style: italic;
+      font-family: var(--serif-font);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .hero-subtitle::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--mid-gray), transparent);
+    }
+
+    /* ===== IMAGES ===== */
+    .hero-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 28px;
+      object-fit: cover;
+      border: 1px solid var(--light-gray);
+      padding: 4px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .image-caption {
+      font-size: 11px;
+      color: var(--dark-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: -18px;
+      margin-bottom: 25px;
+      padding-left: 8px;
+      border-left: 3px solid #000;
+    }
+
+    /* ===== TEXT ===== */
+    .section-title {
+      font-family: var(--serif-font);
+      font-size: 28px;
+      font-weight: 700;
+      margin: 25px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: #000;
+    }
+
+    .section-text {
+      font-size: 15px;
+      color: #3a3a3a;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .section-text.dropcap::first-letter {
+      font-family: var(--serif-font);
+      font-size: 4.2em;
+      float: left;
+      line-height: 0.8;
+      padding-right: 12px;
+      padding-top: 4px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .quote-block {
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      padding: 22px 0;
+      margin: 30px 0;
+      font-family: var(--serif-font);
+      font-size: 20px;
+      font-style: italic;
+      text-align: center;
+      color: #1a1a1a;
+      letter-spacing: 0.3px;
+    }
+    .quote-block .quote-line {
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: #000;
+      margin: 12px auto 0;
+    }
+
+    .inline-marker {
+      display: inline-block;
+      width: 12px;
+      height: 2px;
+      background: #000;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar-section {
+      margin-bottom: 35px;
+      padding: 18px 20px 20px;
+      border: 1px solid var(--mid-gray);
+      background: #fff;
+      position: relative;
+    }
+    .sidebar-section::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: -10px;
+      border: 1px solid var(--light-gray);
+      z-index: -1;
+      background: #fafaf8;
+    }
+    .sidebar-title {
+      font-family: var(--serif-font);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar-title .title-icon {
+      font-size: 14px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sidebar-text {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dotted var(--mid-gray);
+      padding-bottom: 6px;
+    }
+    .sidebar-text:last-of-type {
+      border-bottom: none;
+    }
+    .sidebar-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 14px;
+      object-fit: cover;
+      border: 1px solid var(--light-gray);
+      padding: 3px;
+      background: #fff;
+    }
+    .sidebar-note {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #999;
+      text-align: center;
+      border-top: 1px solid var(--light-gray);
+      padding-top: 10px;
+      margin-top: 8px;
+    }
+
+    /* ===== DIVIDER BETWEEN MAIN AND SIDEBAR (visible line) ===== */
+    .main-content::before {
+      content: '';
+      position: absolute;
+      left: calc(66% - 1px);
+      top: 40px;
+      bottom: 40px;
+      width: 1px;
+      background: repeating-linear-gradient(
+              to bottom,
+              var(--mid-gray) 0px,
+              var(--mid-gray) 4px,
+              transparent 4px,
+              transparent 12px
+      );
+      display: block;
+      z-index: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: #111;
+      color: #ddd;
+      padding: 45px 5% 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 4px solid #000;
+      position: relative;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #333;
+    }
+    .footer-section {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid #333;
+      padding: 0 20px;
+    }
+    .footer-section:last-child {
+      border-right: none;
+    }
+    .footer-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .footer-line {
+      width: 20px;
+      height: 2px;
+      background: #555;
+      margin: 10px auto;
+    }
+    .footer-text {
+      font-size: 13px;
+      color: #999;
+    }
+    .footer-bottom {
+      background-color: #111;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #222;
+    }
+    .footer-bottom-text {
+      font-size: 11px;
+      color: #777;
+      letter-spacing: 1px;
+    }
+    .footer-bottom-line {
+      flex: 1;
+      height: 1px;
+      background: #222;
+      margin: 0 15px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        padding: 30px 5%;
+        gap: 30px;
+      }
+      .main-content::before {
+        display: none;
+      }
+      .hero-title {
+        font-size: 34px;
+        padding-left: 15px;
+        border-left-width: 3px;
+      }
+      .nav-links {
+        gap: 18px;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 25px;
+      }
+      .footer-section {
+        border-right: none;
+        border-bottom: 1px solid #333;
+        padding: 15px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top decorative strip -->
+<div class="top-strip">
+  <span>Vol. 04 · Issue 02</span>
+  <span class="strip-line"></span>
+  <span>April 2026</span>
+  <span class="strip-line"></span>
+  <span>Exhibition Magazine</span>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="logo">
+    <span class="logo-text">xaosland</span>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav class="nav">
+  <ul class="nav-links">
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Fashion</a></li>
+    <li><a href="#">Art</a></li>
+    <li><a href="#">Decoding</a></li>
+    <li><a href="#">Beauty</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Search</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+  <!-- Left column -->
+  <div class="content-left">
+    <div class="section-kicker">
+      <span class="kicker-line"></span>
+      <span>About the Institution</span>
+    </div>
+    <h1 class="hero-title">MANAGING EXHIBITION, HOSTING EVENTS & AUCTION STORE</h1>
+    <p class="hero-subtitle">Magazines, Collections & Stores</p>
+
+    <p class="image-caption">The main gallery hall · Photo by Exhibition Team</p>
+
+    <p class="section-text dropcap">
+      Lorem ipsum dolor sit amet consectetur. Sed purus eu justo tortor cras. Sodales sagittis tincidunt tortor lorem donec. Mi tincidunt nibh suspendisse vel pharetra. Egestas sed vel donec eget pulvinar. Sit malesuada eget turpis nascetur arcu urna euismod. Tellus odio scelerisque ullamcorper venenatis ut a.
+    </p>
+    <p class="section-text">
+      Lorem ipsum dolor sit amet consectetur. Sed purus eu justo tortor cras. Sodales sagittis tincidunt tortor lorem donec. Mi tincidunt nibh suspendisse vel pharetra. Egestas sed vel donec eget pulvinar.
+    </p>
+
+    <!-- Quote block -->
+    <div class="quote-block">
+      “Every object tells a story — we simply give it the stage.”
+      <span class="quote-line"></span>
+    </div>
+
+    <p class="image-caption">Curatorial team at work · Fyshwick studio</p>
+
+    <h2 class="section-title">LOREM IPSUM DOLOR</h2>
+
+    <div class="line-horizontal dashed" style="margin: 20px 0 30px;"></div>
+
+    <p class="section-text">
+      <span class="inline-marker"></span> Egestas sed vel donec eget pulvinar. Sit malesuada eget turpis nascetur arcu urna euismod. Tellus odio scelerisque ullamcorper venenatis ut a. Sodales sagittis tincidunt tortor lorem donec.
+    </p>
+  </div>
+
+  <!-- Right column (Sidebar) -->
+  <div class="content-right">
+    <!-- Opening Hours -->
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">
+        <span class="title-icon">🕐</span> OPENING HOURS
+      </h3>
+      <p class="sidebar-text"><span>Monday</span> <span>8:00AM — 6:00PM</span></p>
+      <p class="sidebar-text"><span>Tuesday</span> <span>8:00AM — 6:00PM</span></p>
+      <p class="sidebar-text"><span>Wednesday</span> <span>8:00AM — 6:00PM</span></p>
+      <p class="sidebar-text"><span>Thursday</span> <span>8:00AM — 6:00PM</span></p>
+      <p class="sidebar-text"><span>Friday</span> <span>8:00AM — 6:00PM</span></p>
+      <p class="sidebar-text"><span>Saturday</span> <span>8:00AM — 6:00PM</span></p>
+      <p class="sidebar-text"><span>Sunday</span> <span>5:00AM — 5:30PM</span></p>
+      <p class="sidebar-note">Last entry 30 min before close</p>
+    </div>
+
+    <!-- Get in Touch -->
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">
+        <span class="title-icon">☎</span> GET IN TOUCH
+      </h3>
+      <p class="sidebar-text"><span>Belconnen</span> <span>02 3658 9654</span></p>
+      <p class="sidebar-text"><span>Fyshwick</span> <span>0345 968 254</span></p>
+      <p class="sidebar-text"><span>Email Us</span> <a href="#" style="color: #000; text-decoration: underline;">Click Here</a></p>
+      <div class="line-horizontal short" style="margin: 12px auto 0;"></div>
+    </div>
+
+    <!-- Find Us -->
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">
+        <span class="title-icon">📍</span> FIND US
+      </h3>
+      <p class="sidebar-text" style="font-weight: 600; border-bottom: none;">Belconnen</p>
+      <p class="sidebar-text" style="border-bottom: 1px dotted var(--mid-gray);">15 Market Street, Belconnen Act, Australia</p>
+      <p class="sidebar-text" style="font-weight: 600; border-bottom: none; margin-top: 8px;">Fyshwick</p>
+      <p class="sidebar-text">12 Dalby St, Fyshwick, Canberra Act, Australia</p>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-section">
+    <h4 class="footer-title">FOLLOW</h4>
+    <div class="footer-line"></div>
+    <p class="footer-text">Instagram · Twitter · LinkedIn</p>
+  </div>
+  <div class="footer-section">
+    <h4 class="footer-title">ENTER YOUR E‑MAIL</h4>
+    <div class="footer-line"></div>
+    <p class="footer-text">newsletter@exhibition.mag</p>
+  </div>
+  <div class="footer-section">
+    <h4 class="footer-title">LEGAL</h4>
+    <div class="footer-line"></div>
+    <p class="footer-text">Privacy · Terms · Imprint</p>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-bottom-line"></span>
+  <p class="footer-bottom-text">ALL RIGHTS RESERVED</p>
+  <span class="footer-bottom-line"></span>
+</div>
+
+</body>
+</html>
