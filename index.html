@@ -1,387 +1,144 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="xaosland bridges the gap between avant-garde exhibition spaces and the discerning collector. Explore our curatorial philosophy, locations, and upcoming events.">
- <meta name="keywords" content="exhibition, auction, art, fashion, curation, xaosland, Belconnen, Fyshwick, gallery">
- <meta name="author" content="xaosland">
- <meta property="og:title" content="About Us · xaosland">
- <meta property="og:description" content="Discover xaosland: a leading institution for contemporary curation, exhibitions, and auctions.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://xaosland.com/about">
- <meta property="og:image" content="https://images.unsplash.com/photo-1582573648322-94c683394a87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
- <title>About Us · xaosland</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="xaosland — Exhibition, Auction, Store. Contemporary curation and cultural spaces.">
+  <meta name="author" content="xaosland">
+  <meta property="og:title" content="xaosland">
+  <meta property="og:description" content="Exhibition · Auction · Store">
+  <meta property="og:type" content="website">
+  <title>xaosland</title>
 
- <!-- Favicon -->
- <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>X</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>X</text></svg>">
 
- <!-- Fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
- <!-- Font Awesome for icons -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
- <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
- <!-- Top decorative strip -->
- <div class="top-strip">
- <span>Vol. 04 · Issue 02</span>
- <span class="strip-line"></span>
- <span>April 2026</span>
- <span class="strip-line"></span>
- <span>Exhibition Magazine</span>
- </div>
+  <div class="top-strip">
+    <span>xaosland</span>
+    <span class="strip-line"></span>
+    <span id="dynamic-date"></span>
+    <span class="strip-line"></span>
+    <span>Exhibition · Auction · Store</span>
+  </div>
 
- <!-- Header -->
- <header class="header">
- <div class="logo" title="xaosland — Exhibition Magazine">
- <div class="logo-mark"><span>X</span></div>
- <span class="logo-text">xaosland<small>Exhibition · Auction · Store</small></span>
- </div>
- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
- <i class="fas fa-moon"></i>
- </button>
- </header>
+  <header class="header">
+    <a href="/" class="logo" title="xaosland">
+      <div class="logo-mark"><span>X</span></div>
+      <span class="logo-text">xaosland<small>Exhibition · Auction · Store</small></span>
+    </a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
 
- <!-- Navigation -->
- <nav class="nav" id="mainNav">
- <ul class="nav-links">
- <li><a href="#" class="active">About Us</a></li>
- <li><a href="#">Fashion</a></li>
- <li><a href="#">Art</a></li>
- <li><a href="#">Decoding</a></li>
- <li><a href="#">Beauty</a></li>
- <li><a href="#">Services</a></li>
- <li><a href="#">Shop</a></li>
- <li><a href="#">Search</a></li>
- </ul>
- </nav>
+  <nav class="nav" id="mainNav">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#exhibitions">Exhibitions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
- <!-- Main Content -->
- <main class="main-content">
- <!-- Left column -->
- <div class="content-left">
- <div class="section-kicker">
- <span class="kicker-line"></span>
- <span>About the Institution</span>
- </div>
- <h1 class="hero-title">MANAGING EXHIBITION, HOSTING EVENTS &amp; AUCTION STORE</h1>
- <p class="hero-subtitle">Magazines, Collections &amp; Curated Stores</p>
+  <main class="main-content">
+    <div class="content-left">
+      <div class="hero-section">
+        <h1 class="hero-title">XAOSLAND</h1>
+        <p class="hero-subtitle">Contemporary Curation · Exhibition Spaces · Auction House</p>
+      </div>
 
- <!-- Hero image -->
- <div class="hero-image-wrapper">
- <img src="https://images.unsplash.com/photo-1582573648322-94c683394a87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Main Gallery Hall · Exhibition Space" class="hero-image" loading="lazy">
- </div>
- <p class="image-caption">The main gallery hall · Photo by Exhibition Team</p>
+      <section id="about" class="content-section">
+        <h2 class="section-title">About Us</h2>
+        <div class="line-horizontal dashed" style="margin: 20px 0 30px;"></div>
+        <p class="section-text">
+          <span class="inline-marker"></span> xaosland bridges the gap between avant-garde exhibition spaces and the discerning collector. Founded with a passion for contemporary curation, our institution cultivates thoughtful programming — from immersive installations to tightly edited auction events.
+        </p>
+        <p class="section-text">
+          <span class="inline-marker"></span> Every corner of our gallery is designed to provoke dialogue, celebrate craftsmanship, and elevate the objects that shape our cultural landscape.
+        </p>
+      </section>
 
- <p class="section-text dropcap">
- Founded with a passion for contemporary curation, <strong>xaosland bridges the gap</strong> between avant-garde exhibition spaces and the discerning collector. Our institution has spent over a decade cultivating a reputation for thoughtful programming — from immersive installations to tightly edited auction events that draw bidders from across the globe. Every corner of our gallery is designed to provoke dialogue, celebrate craftsmanship, and elevate the objects that shape our cultural landscape.
- </p>
- <p class="section-text">
- We believe that an exhibition is never simply a display of objects — it is a conversation between the curator, the artist, and the audience. Our team works meticulously to ensure that each show resonates with clarity and intention, whether it features emerging talent or established masters. The result is a dynamic, ever-evolving programme that keeps our community returning season after season.
- </p>
+      <section id="news" class="content-section">
+        <h2 class="section-title">Latest News</h2>
+        <div class="line-horizontal dashed" style="margin: 20px 0 30px;"></div>
+        
+        <div id="news-container" class="news-list">
+          <div class="news-item">
+            <h3 class="news-title">Site Under Development</h3>
+            <p class="news-date">April 2026</p>
+            <p class="news-excerpt">New website launching soon with full exhibition archive, auction catalog, and editorial content.</p>
+          </div>
+        </div>
+      </section>
+    </div>
 
- <!-- Quote block -->
- <div class="quote-block">
- <span class="quote-mark">&ldquo;</span>
- Every object tells a story — we simply give it the stage.
- <span class="quote-line"></span>
- </div>
+    <div class="content-right">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title"><span class="title-icon">☎</span> GET IN TOUCH</h3>
+        <p class="sidebar-text"><span class="label">Email</span> <span class="value"><a href="mailto:hello@xaosland.com" class="sidebar-link">hello@xaosland.com</a></span></p>
+        <div class="line-horizontal short" style="margin: 12px auto 0;"></div>
+      </div>
+    </div>
+  </main>
 
- <!-- Second image -->
- <div class="hero-image-wrapper">
- <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Curatorial Team · Fyshwick Studio" class="hero-image" loading="lazy">
- </div>
- <p class="image-caption">Curatorial team at work · Fyshwick studio</p>
+  <footer class="footer">
+    <div class="footer-section">
+      <h4 class="footer-title">FOLLOW</h4>
+      <div class="footer-line"></div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4 class="footer-title">NEWSLETTER</h4>
+      <div class="footer-line"></div>
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span class="footer-bottom-line"></span>
+    <p class="footer-bottom-text">ALL RIGHTS RESERVED &copy; 2026 XAOSLAND</p>
+    <span class="footer-bottom-line"></span>
+  </div>
 
- <h2 class="section-title">OUR CURATORIAL PHILOSOPHY</h2>
+  <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
 
- <div class="line-horizontal dashed" style="margin: 20px 0 30px;"></div>
+  <script>
+    document.getElementById('dynamic-date').textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
- <p class="section-text">
- <span class="inline-marker"></span> At the heart of xaosland lies a commitment to <em>contextual storytelling</em>. We don't simply hang works on walls — we build narratives that guide visitors through carefully considered spatial sequences. Each exhibition is an invitation to see the world through a different lens, to question assumptions, and to discover unexpected connections between seemingly disparate works.
- </p>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    if (currentTheme === 'dark') {
+      body.setAttribute('data-theme', 'dark');
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
 
- <div class="highlight-box">
- <strong>📍 Two Locations, One Vision</strong>
- Our Belconnen and Fyshwick spaces operate in tandem, offering distinct atmospheres while sharing a unified curatorial voice. Belconnen hosts our flagship exhibitions and auction events; Fyshwick is home to our working studios, archive, and intimate salon-style gatherings.
- </div>
-
- <p class="section-text">
- <span class="inline-marker"></span> Beyond the gallery walls, our publishing arm produces a <a href="#" class="sidebar-link">biannual magazine</a> that documents exhibitions, interviews artists, and explores the intersections of fashion, design, and fine art. The magazine has become a collector's item in its own right — a tangible record of the ideas that drive our programming forward.
- </p>
-
- <p class="section-text">
- Looking ahead, we are expanding our digital presence to include virtual walkthroughs, online auctions, and an editorial platform that extends the conversation beyond physical boundaries. The future of exhibition-making is hybrid, and xaosland is at the forefront of that evolution.
- </p>
- </div>
-
- <!-- Right column (Sidebar) -->
- <div class="content-right">
- <!-- Opening Hours -->
- <div class="sidebar-section">
- <h3 class="sidebar-title">
- <span class="title-icon">&#128338;</span> OPENING HOURS
- </h3>
- <p class="sidebar-text"><span class="label">Monday</span> <span class="value">8:00AM — 6:00PM</span></p>
- <p class="sidebar-text"><span class="label">Tuesday</span> <span class="value">8:00AM — 6:00PM</span></p>
- <p class="sidebar-text"><span class="label">Wednesday</span> <span class="value">8:00AM — 6:00PM</span></p>
- <p class="sidebar-text"><span class="label">Thursday</span> <span class="value">8:00AM — 6:00PM</span></p>
- <p class="sidebar-text"><span class="label">Friday</span> <span class="value">8:00AM — 6:00PM</span></p>
- <p class="sidebar-text"><span class="label">Saturday</span> <span class="value">8:00AM — 6:00PM</span></p>
- <p class="sidebar-text"><span class="label">Sunday</span> <span class="value">5:00AM — 5:30PM</span></p>
- <p class="sidebar-note">Last entry 30 min before close</p>
- </div>
-
- <!-- Get in Touch -->
- <div class="sidebar-section">
- <h3 class="sidebar-title">
- <span class="title-icon">&#9742;</span> GET IN TOUCH
- </h3>
- <p class="sidebar-text"><span class="label">Belconnen</span> <span class="value">02 3658 9654</span></p>
- <p class="sidebar-text"><span class="label">Fyshwick</span> <span class="value">0345 968 254</span></p>
- <p class="sidebar-text">
- <span class="label">Email Us</span>
- <span class="value"><a href="mailto:hello@xaosland.com" class="sidebar-link">hello@xaosland.com</a></span>
- </p>
- <div class="line-horizontal short" style="margin: 12px auto 0;"></div>
- </div>
-
- <!-- Contact Form -->
- <div class="sidebar-section">
- <h3 class="sidebar-title">
- <span class="title-icon"><i class="fas fa-envelope"></i></span> CONTACT US
- </h3>
- <form class="contact-form" action="#" method="post">
- <input type="text" placeholder="Your Name" required>
- <input type="email" placeholder="Your Email" required>
- <textarea placeholder="Your Message" required></textarea>
- <button type="submit">Send Message</button>
- </form>
- </div>
-
- <!-- Find Us -->
- <div class="sidebar-section">
- <h3 class="sidebar-title">
- <span class="title-icon"><i class="fas fa-map-marker-alt"></i></span> FIND US
- </h3>
- <!-- Google Maps Embed -->
- <div class="map-container">
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d149.0813734153167!3d-35.2809622797516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b1649f0f342b6dd%3A0x400f500f5b8b0b0!2sCanberra%20ACT%2C%20Australia!5e0!3m2!1sen!2sus!4v1650345678901!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
- </div>
- <p class="sidebar-text" style="font-weight: 600; border-bottom: none; margin-top: 10px;">
- <span class="label">Belconnen</span>
- </p>
- <p class="sidebar-text" style="border-bottom: 1px dotted var(--mid-gray);">
- <span class="value" style="text-align: left; width: 100%;">15 Market Street, Belconnen ACT, Australia</span>
- </p>
- <p class="sidebar-text" style="font-weight: 600; border-bottom: none; margin-top: 8px;">
- <span class="label">Fyshwick</span>
- </p>
- <p class="sidebar-text">
- <span class="value" style="text-align: left; width: 100%;">12 Dalby St, Fyshwick, Canberra ACT, Australia</span>
- </p>
- </div>
-
- <!-- Quick Links -->
- <div class="sidebar-section">
- <h3 class="sidebar-title">
- <span class="title-icon"><i class="fas fa-link"></i></span> QUICK LINKS
- </h3>
- <p class="sidebar-text" style="border-bottom: 1px dotted var(--mid-gray);">
- <span class="label">Current Exhibition</span>
- <span class="value"><a href="#" class="sidebar-link">View →</a></span>
- </p>
- <p class="sidebar-text" style="border-bottom: 1px dotted var(--mid-gray);">
- <span class="label">Upcoming Auctions</span>
- <span class="value"><a href="#" class="sidebar-link">Browse →</a></span>
- </p>
- <p class="sidebar-text">
- <span class="label">Magazine Archive</span>
- <span class="value"><a href="#" class="sidebar-link">Read →</a></span>
- </p>
- </div>
- </div>
- </main>
-
- <!-- Footer -->
- <footer class="footer">
- <div class="footer-section">
- <h4 class="footer-title">FOLLOW</h4>
- <div class="footer-line"></div>
- <div class="footer-socials">
- <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
- <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
- <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
- <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
- </div>
- </div>
- <div class="footer-section">
- <h4 class="footer-title">NEWSLETTER</h4>
- <div class="footer-line"></div>
- <form class="newsletter-form" action="#" method="post">
- <input type="email" placeholder="Your email address" required>
- <button type="submit">Subscribe</button>
- </form>
- </div>
- <div class="footer-section">
- <h4 class="footer-title">LEGAL</h4>
- <div class="footer-line"></div>
- <p class="footer-text">
- <a href="#" class="sidebar-link">Privacy</a> ·
- <a href="#" class="sidebar-link">Terms</a> ·
- <a href="#" class="sidebar-link">Imprint</a>
- </p>
- </div>
- </footer>
- <div class="footer-bottom">
- <span class="footer-bottom-line"></span>
- <p class="footer-bottom-text">ALL RIGHTS RESERVED &copy; 2026 XAOSLAND</p>
- <span class="footer-bottom-line"></span>
- </div>
-
- <!-- Chat Widget -->
- <button class="chat-widget" id="chatWidget">
- <i class="fas fa-comments"></i>
- </button>
- <div class="chat-box" id="chatBox">
- <div class="chat-header">
- <h4>Chat with Us</h4>
- <button class="chat-close" id="chatClose">&times;</button>
- </div>
- <div class="chat-messages" id="chatMessages">
- <div class="chat-message bot">Hello! How can we help you today?</div>
- </div>
- <div class="chat-input">
- <input type="text" id="chatInput" placeholder="Type your message...">
- <button id="chatSend">Send</button>
- </div>
- </div>
-
- <!-- Back to Top Button -->
- <button class="back-to-top" id="backToTop" title="Back to top" aria-label="Back to top">↑</button>
-
- <script>
- // --- Theme Toggle ---
- const themeToggle = document.getElementById('themeToggle');
- const body = document.body;
- const currentTheme = localStorage.getItem('theme') || 'light';
-
- // Apply saved theme
- if (currentTheme === 'dark') {
- body.setAttribute('data-theme', 'dark');
- themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
- }
-
- themeToggle.addEventListener('click', () => {
- const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
- body.setAttribute('data-theme', newTheme);
- localStorage.setItem('theme', newTheme);
-
- if (newTheme === 'dark') {
- themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
- } else {
- themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
- }
- });
-
- // --- Back to Top Button ---
- const backToTopBtn = document.getElementById('backToTop');
-
- function toggleBackToTop() {
- if (window.scrollY > 500) {
- backToTopBtn.classList.add('visible');
- } else {
- backToTopBtn.classList.remove('visible');
- }
- }
-
- window.addEventListener('scroll', toggleBackToTop, { passive: true });
-
- backToTopBtn.addEventListener('click', () => {
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
- });
- });
-
- // --- Sticky Nav Shadow ---
- const nav = document.getElementById('mainNav');
- window.addEventListener('scroll', () => {
- if (window.scrollY > 10) {
- nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
- } else {
- nav.style.boxShadow = 'none';
- }
- }, { passive: true });
-
- // --- Scroll Animations (Intersection Observer) ---
- const animateOnScroll = () => {
- const elements = document.querySelectorAll('.section-kicker, .hero-title, .hero-subtitle, .hero-image-wrapper, .image-caption, .section-title, .section-text, .quote-block, .highlight-box, .sidebar-section');
-
- const observer = new IntersectionObserver((entries) => {
- entries.forEach(entry => {
- if (entry.isIntersecting) {
- entry.target.classList.add('visible');
- }
- });
- }, {
- threshold: 0.1,
- rootMargin: '0px 0px -50px 0px'
- });
-
- elements.forEach(el => {
- el.classList.remove('visible');
- observer.observe(el);
- });
- };
-
- // Initialize scroll animations
- animateOnScroll();
-
- // --- Chat Widget ---
- const chatWidget = document.getElementById('chatWidget');
- const chatBox = document.getElementById('chatBox');
- const chatClose = document.getElementById('chatClose');
- const chatInput = document.getElementById('chatInput');
- const chatSend = document.getElementById('chatSend');
- const chatMessages = document.getElementById('chatMessages');
-
- chatWidget.addEventListener('click', () => {
- chatBox.classList.toggle('visible');
- });
-
- chatClose.addEventListener('click', () => {
- chatBox.classList.remove('visible');
- });
-
- chatSend.addEventListener('click', () => {
- const message = chatInput.value.trim();
- if (message) {
- // Add user message
- const userMessage = document.createElement('div');
- userMessage.className = 'chat-message user';
- userMessage.textContent = message;
- chatMessages.appendChild(userMessage);
-
- // Clear input
- chatInput.value = '';
-
- // Simulate bot reply after 1 second
- setTimeout(() => {
- const botMessage = document.createElement('div');
- botMessage.className = 'chat-message bot';
- botMessage.textContent = "Thank you for your message! We'll get back to you soon.";
- chatMessages.appendChild(botMessage);
- chatMessages.scrollTop = chatMessages.scrollHeight;
- }, 1000);
- }
- });
- </script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 </body>
 </html>
