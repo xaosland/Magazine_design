@@ -113,7 +113,7 @@
       document.getElementById('pagination').innerHTML = html;
       
       document.getElementById('news').innerHTML = data.news.map(item => {
-        const preview = item.lines.find(l => l.trim().startsWith('От') || l.trim().startsWith('Это'))?.substring(3, 150) || item.title.substring(0, 100);
+        const preview = item.lines.slice(0, 8).map(l => l.trim()).filter(l => l && !l.startsWith('📅') && !l.startsWith('📰') && !l.startsWith('📌') && l.length > 10).join('. ').substring(0, 400) || item.title.substring(0, 100);
         const views = item.views || 0;
         
         return `
